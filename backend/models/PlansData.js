@@ -6,3 +6,5 @@ var PlanData = new Schema({
     PlanPrice: { type: String, required: true },
     PlanDuration: { type: String, required: true },
 })
+
+module.exports = mongoose.model("PlanData", PlanData);
