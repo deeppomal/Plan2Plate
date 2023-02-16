@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import Image from 'next/image'
 import { APICall } from '../utils/apiCall'
+import Link from 'next/link'
+
 export const Login = () => {
 
     const [firstname,setFirstName] = useState('')
@@ -76,8 +78,9 @@ export const Login = () => {
                 <input type="password" name="password" id="password" placeholder='Password' value={password} onChange={(evt)=>setPassword(evt.target.value)} 
                 className='border focus:border-[#009f7f] focus:outline-none rounded w-full  p-3 font-mono' />
             </div>
-           <input type="button" value="LOGIN" onClick={loginBtnHandler}
-           className='w-10/12 bg-[#009f7f] mt-10 p-3 rounded text-white font-bold font-mono text-xl cursor-pointer'/>
+            <Link href="/home" className='w-10/12 bg-[#009f7f] mt-10 p-3 rounded text-white font-bold font-mono text-xl cursor-pointer items-center justify-center flex'>
+                <input type="button" value="LOGIN" onClick={loginBtnHandler}
+           /></Link>
         </div>
         }
     </div>

@@ -2,12 +2,12 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import FavourableDietList from "../pages/FavourableDietList";
-
+import FavourableDietList from "../pages/dietlist";
+import Link from 'next/link'
 
 const navigation = [
   { name: "Home", href: "#" },
-  { name: "Favourable Diets", href:<FavourableDietList /> },
+  { name: "Favourable Diets", href:'#dietlist' },
   { name: "Blogs", href: "#" },
   { name: "Company", href: "#" },
   { name: "Contact", href: "#" },
@@ -48,18 +48,18 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
+            <Link href="/"> <a
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Sign in <span aria-hidden="true">&rarr;</span>
             </a>
-            <a
+            <Link href="/"></Link><a
               href="#"
               className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign up
-            </a>
+            </a></Link>
           </div>
         </nav>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
