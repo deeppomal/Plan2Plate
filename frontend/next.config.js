@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    API_ENDPOINT: "http://localhost:3001",
+    API_ENDPOINT: "http://localhost:3000",
   },
 };
 

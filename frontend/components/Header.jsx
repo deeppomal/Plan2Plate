@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react'
 import Link from 'next/link'
 
-const categories = [
+const subPages = [
+  { name: "Blog", slug: "blog" },
   { name: "React", slug: "react" },
-  { name: "Category 1", slug: "Category1" }
+  { name: "Category", slug: "Category" },
 ];
 const Header =() => {
     return (
@@ -12,13 +13,13 @@ const Header =() => {
           <div className="md:float-left block">
             <Link href="/">
               <span className="cursor-pointer font-bold text-4xl text-white">
-              Plan2Page
+                Plan2Plate
               </span>
             </Link>
           </div>
           <div className="hidden md:float-left md:contents">
-            {categories.map((category) => (
-              <Link key={category.slug} href={`/category/${category.slug}`}>
+            {subPages.map((category) => (
+              <Link key={category.slug} href={`/${category.slug}`}>
                 <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
                   {category.name}
                 </span>
