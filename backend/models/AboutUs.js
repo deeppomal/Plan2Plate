@@ -4,4 +4,6 @@ var mongoose = require('mongoose'),
 var AboutUsSchema = new Schema({
         
 
-    })
+})
+    
+module.exports = mongoose.model("AboutUsSchema", AboutUsSchema);

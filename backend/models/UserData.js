@@ -39,3 +39,5 @@ var UserData = new Schema({
     Fiber: { type: int },
   },
 });
+
+module.exports = mongoose.model("UserData", UserData);
