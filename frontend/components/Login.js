@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { APICall } from '../utils/apiCall'
 import Link from 'next/link'
 
@@ -32,7 +32,8 @@ export const Login = () => {
             <Image
                 src="/grocery.png"
                 alt="background picture"
-                layout='fill'
+                  layout='fill'
+                 
             />
         </div>
         {!isRegistered ? <div className='bg-white flex w-1/3 z-30 p-3 rounded-md items-center justify-center shadow-xl flex-col pb-10'>
