@@ -17,13 +17,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="isolate bg-white">
-      <div className="px-6 pt-6 lg:px-8">
-        <nav className="flex items-center justify-between" aria-label="Global">
-          <div className="flex lg:flex-1">
+    <div className="isolate bg-white mb-10 pt-3 relative">
+      <div className="px-6  lg:px-8">
+        <nav
+          className="flex fixed items-center justify-between w-full pr-10"
+          aria-label="Global"
+        >
+          <div className="flex lg:flex-1 spec-x-4">
             <a href="#" className="-m-1.5 p-1.5 multicolortext">
               <span className="sr-only">Company Logo</span>
-             Plan2Plate
+              Plan2Plate
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -36,7 +39,7 @@ export default function Navbar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12 navbar">
+          <div className="hidden lg:flex lg:gap-x-12 navbar ">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -48,18 +51,23 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link href="/"> <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Sign in <span aria-hidden="true">&rarr;</span>
-            </a>
-            <Link href="/"></Link><a
-              href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Sign up
-            </a></Link>
+            <Link href="/">
+              {" "}
+              <a
+                href="#"
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
+                Sign in{" "}
+              </a>
+              <span aria-hidden="true">&rarr;</span>
+              <Link href="/"></Link>
+              <a
+                href="#"
+                className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Sign up
+              </a>
+            </Link>
           </div>
         </nav>
         <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -103,25 +111,26 @@ export default function Navbar() {
                     href="#"
                     className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                   >
-                  Sign in <span aria-hidden="true">&rarr;</span>
+                    Sign in{" "}
                   </a>
+                  <span aria-hidden="true">&rarr;</span>
                 </div>
-                
               </div>
               <div className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 signup">
-                  <a
-                    href="#"
-                    className="ml-8 inline-flex items-center justify-center whitespace-nowrap"
-                  >
-                    Sign up
-                  </a>
-                </div>
+                <a
+                  href="#"
+                  className="ml-8 inline-flex items-center justify-center whitespace-nowrap"
+                >
+                  Sign up
+                </a>
+              </div>
             </div>
           </Dialog.Panel>
         </Dialog>
       </div>
-      <main>
-      </main>
+      <body>
+        <main></main>
+      </body>
     </div>
   );
 }
