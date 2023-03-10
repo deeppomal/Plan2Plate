@@ -86,6 +86,12 @@ app.post("/register", async (req, res) => {
 app.get("/blogs", async (req, res) => {
   try {
     const blogs = await Blog.find({});
+    // const blogSort = blogs.map(function (element) {
+    //   console.log(element);
+    //   element.BlogAdded_FormattedDate = new Date(element.BlogAddedDate);
+    // });
+    // console.log("New data");
+    // console.log(blogSort);
     res.json({ status: 200, data: blogs });
   } catch (err) {
     res.status(400).json({ message: err.message });
