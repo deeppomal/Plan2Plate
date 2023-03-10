@@ -5,10 +5,11 @@ import Featured from '../components/Featured'
 import FavourableDietList from './dietlist'
 import { Login } from '../components/Login'
 
+
 export default function Home() {
   return (
     <div className="h-screen">
       <Login />
-    </div>
+    </div> 
   );
 }

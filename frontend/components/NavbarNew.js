@@ -13,11 +13,11 @@ export const NavbarNew = () => {
                     Home
                 </p>
             </Link>
-            <Link href="/home">
+            {/* <Link href="/home">
                 <p className='font-semibold mx-4 cursor-pointer'>
                     Favourable Diets
                 </p>
-            </Link>
+            </Link> */}
             <Link href="/blog">
                 <p className='font-semibold mx-4 cursor-pointer'>
                     Blogs
