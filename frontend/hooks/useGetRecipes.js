@@ -12,6 +12,10 @@ export const useGetRecipes = (onSuccess,onError,diet) => {
         {
             onSuccess,
             onError,
+            refetchOnMount:false,
+            refetchIntervalInBackground:false,
+            refetchOnWindowFocus:false,
+            
             // enabled:false
         }
     )
