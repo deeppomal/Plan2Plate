@@ -64,7 +64,7 @@ export const Login = () => {
                 className='border focus:border-[#009f7f] focus:outline-none rounded w-full  p-3 font-mono' />
             </div>
            <input type="button" value="REGISTER" onClick={registerBtnHandler}
-           className='w-10/12 bg-[#009f7f] mt-10 p-3 rounded text-white font-bold font-mono text-xl cursor-pointer'/>
+           className='w-10/12 bg-[#009f7f] mt-10 p-3 rounded text-white font-bold font-mono text-xl cursor-pointer bg-rose-900'/>
         </div>
         :
         <div className='bg-white flex w-1/3 z-30 p-3 rounded-md items-center justify-center shadow-xl flex-col pb-10'>
