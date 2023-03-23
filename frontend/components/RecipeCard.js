@@ -22,7 +22,7 @@ export const RecipeCard = ({data,toggleModal,handleRecipeID}) => {
                     className='rounded-t-md'
                 />
             </div>
-            <p className='my-3 font-bold text-lg'>
+            <p className='my-3 font-bold text-lg text-gray-900'>
                 {data?.title}
             </p>
         </div>

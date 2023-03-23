@@ -70,7 +70,7 @@ app.post("/register", async (req, res) => {
     });
 
     user.save(function (err) {
-      if (err) throw err;
+      if (err) console.log(err);
       res.status(201).json({
         id: user.id,
         firstname: user.firstname,

@@ -13,7 +13,7 @@ export const RecipeFilters = ({FetchAgain}) => {
           <p className='font-bold text-lg text-white '>Filters</p>
         </div>  
         <div className='mt-2 w-full p-3'>
-          <p className='font-semibold'>Diet Restriction </p>
+          <p className='font-semibold text-gray-900'>Diet Restriction </p>
           <div className='w-full bg-slate-500 h-[1px]'></div>
           <div className="flex mt-3 items-center">
             <input
@@ -21,8 +21,9 @@ export const RecipeFilters = ({FetchAgain}) => {
               value="vegan"
               checked={diet === "vegan"}
               onChange={()=>handleOnChange('vegan')}
+              className='bg-white'
             />
-            <p className='mx-3'>Vegan</p>
+            <p className='mx-3 text-gray-900'>Vegan</p>
           </div>
           <div className="flex mt-3 items-center">
             <input
@@ -31,7 +32,7 @@ export const RecipeFilters = ({FetchAgain}) => {
               checked={diet === "ketogenic"}
               onChange={()=>handleOnChange('ketogenic')}
             />
-            <p className='mx-3'>Keto</p>
+            <p className='mx-3 text-gray-900'>Keto</p>
           </div>
           <div className="flex mt-3 items-center">
             <input
@@ -40,7 +41,7 @@ export const RecipeFilters = ({FetchAgain}) => {
               checked={diet === "glutenfree"}
               onChange={()=>handleOnChange('glutenfree')}
             />
-            <p className='mx-3'>Gluten Free</p>
+            <p className='mx-3 text-gray-900'>Gluten Free</p>
           </div>
           <div className="flex mt-3 items-center">
             <input
@@ -49,7 +50,7 @@ export const RecipeFilters = ({FetchAgain}) => {
               checked={diet === "vegetarian"}
               onChange={()=>handleOnChange('vegetarian')}
             />
-            <p className='mx-3'>Vegetarian</p>
+            <p className='mx-3 text-gray-900'>Vegetarian</p>
           </div>
           <div className="flex mt-3 items-center">
             <input
@@ -58,7 +59,7 @@ export const RecipeFilters = ({FetchAgain}) => {
               checked={diet === "pescetarian"}
               onChange={()=>handleOnChange('pescetarian')}
             />
-            <p className='mx-3'>Pescetarian</p>
+            <p className='mx-3 text-gray-900'>Pescetarian</p>
           </div>
         </div>
       </div>
