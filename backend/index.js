@@ -8,7 +8,7 @@ var Blog = require("./models/Blog");
 
 const app = express();
 mongoose.connect(process.env.DB_URL);
-
+ mongoose.set('strictQuery', true);
 const db = mongoose.connection;
 db.on("error", (error) => {
   console.log(error);

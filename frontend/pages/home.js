@@ -3,6 +3,7 @@ import Featured from '../components/Featured'
 import Layout from '../components/Layout'
 import { NavbarNew } from '../components/NavbarNew'
 import FavourableDietList from './dietlist'
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -10,7 +11,9 @@ const Home = () => {
         {/* <Layout /> */}
         <NavbarNew />
         <Featured />
-        <FavourableDietList />
+      <FavourableDietList />
+      <Footer/>
+      
     </div>
   )
 }

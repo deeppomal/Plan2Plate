@@ -7,7 +7,7 @@ function ContactUs() {
      <div className="h-screen w-screen fixed">
           <Image src="/grocery.png" alt="background picture" layout="fill" />
         </div>
-<div class="h-screen w-full grid place-items-center absolute ">
+<div class="h-screen w-full grid place-items-center relative ">
     {/* <Image src="/grocery.png" alt="background picture" layout="fill"  /> */}
         <div class="rounded-md shadow-md flex flex-row">
             {/* <!-- contact information form --> */}
