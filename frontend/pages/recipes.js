@@ -12,9 +12,11 @@ const Recipes = () => {
     const onError = () => {
         console.log("Perform error message display")
     }
-    const { isLoading,data, isError, error} = useGetRecipes(onSuccess,onError,diet);
+    const { isLoading, data, isError, error } = useGetRecipes(onSuccess, onError, diet); 
+    
   return (
-    <div className=''>
+      <div className=''>
+           
         <NavbarNew />
         <div className='pt-28 min-h-screen flex'>
             <RecipeFilters />
