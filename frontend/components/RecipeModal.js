@@ -5,7 +5,12 @@ export const RecipeModal = ({toggleModal,data}) => {
     const myLoader=({src})=>{
         return src;
     }
-    console.log(data)
+    function stripHtml(html)
+    {
+        let tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    }
   return (
    
     <div className='z-50 h-screen w-full bg-black/[0.5] fixed flex items-center justify-center' onClick={toggleModal}>
@@ -43,7 +48,7 @@ export const RecipeModal = ({toggleModal,data}) => {
                             if(step.length > 3){
                                 return(
                                     <div className='my-2'>
-                                        <p className='text-gray-900'>{(index+1) + '. '+ step}</p>
+                                        <p className='text-gray-900'>{(index+1) + '. '+ stripHtml(step)}</p>
                                     </div>
                                 )
                             }

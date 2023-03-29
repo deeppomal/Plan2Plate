@@ -10,11 +10,10 @@ export const useGetRecipeDetail = (onSuccess,onError,id) => {
         'recipedetail'+id,
         ()=>fetchRecipeDetail(id),
         {
-            onSuccess,
-            onError,
             refetchOnMount:false,
             refetchIntervalInBackground:false,
-            refetchOnWindowFocus:false
+            refetchOnWindowFocus:false,
+            staleTime:Infinity,
             // enabled:false
         }
     )
