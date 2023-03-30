@@ -1,5 +1,3 @@
-
-
 function Categories({ post }) {
 
     var lookup = {};

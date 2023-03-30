@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 
 const Featured = () => {
@@ -35,12 +36,17 @@ const Featured = () => {
                   </div>
                 </div>
               </div>
-              <a
+              {/* <a
                 href="#"
                 className="bg-rose-900 inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-rose-600"
               >
                 Create your own Diet
-              </a>
+              </a> */}
+              <Link href="/dietgenerator">
+                 <p className='bg-rose-900 inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-rose-600'>
+                 Create your own Diet
+                 </p>
+              </Link>
             </div>
           </div>
         </div>
