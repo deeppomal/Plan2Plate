@@ -5,7 +5,7 @@ const fetchRecipeDetail = (id)=>{
     return axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=bbc52a86c3ea456faa2faa2c096082cf`)
 }
 
-export const useGetRecipeDetail = (onSuccess,onError,id) => {
+export const useGetRecipeDetail = (id) => {
     return useQuery(
         'recipedetail'+id,
         ()=>fetchRecipeDetail(id),

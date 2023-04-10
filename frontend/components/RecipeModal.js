@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Image from 'next/image'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export const RecipeModal = ({toggleModal,data}) => {
+    
+    const [isFav,setIsFav] = useState(false)
     const myLoader=({src})=>{
         return src;
     }
@@ -10,6 +14,10 @@ export const RecipeModal = ({toggleModal,data}) => {
         let tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
+    }
+    const handleFav = (e) => {
+        e.stopPropagation()
+        setIsFav(!isFav)
     }
   return (
    
@@ -25,7 +33,12 @@ export const RecipeModal = ({toggleModal,data}) => {
                     className='rounded-t-md'
                 />
             </div>
-            <p className='font-semibold text-lg mt-80 text-gray-900'>{data?.title}</p>
+            <div className='w-11/12 mt-80 flex items-center justify-between'>
+                <div />
+                <p className='font-semibold text-lg text-gray-900'>{data?.title}</p>
+                {isFav ? <FavoriteIcon className='text-xl text-red-600 relative right-0 cursor-pointer' onClick={(e)=>handleFav(e)} />
+                : <FavoriteBorderIcon className='text-xl text-black relative right-0 cursor-pointer' onClick={(e)=>handleFav(e)} />}
+            </div>
             <div className='w-11/12 flex flex-col mt-5'>
                 <p className='font-semibold text-gray-900'>Ingredients</p>
                 <div className='flex flex-wrap w-11/12'>
@@ -56,7 +69,6 @@ export const RecipeModal = ({toggleModal,data}) => {
                     }
                 </div>
             </div>
-            
         </div>
     </div>
   )

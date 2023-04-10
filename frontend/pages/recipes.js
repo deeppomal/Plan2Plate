@@ -13,13 +13,14 @@ const Recipes = () => {
     const [recipeData,setRecipeData] = useState([])
 
     const [isModalOpen,setIsModalOpen] = useState(false)
-    const [recipeID,setRecipeID] = useState()
+    const [recipeID,setRecipeID] = useState('')
     
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen)
     }
     const handleRecipeID = (id) => {
         setRecipeID(id)
+        // recipeDetailRefetch()
     }
     const onSuccess = () => {
         setRecipeData(data)
@@ -28,7 +29,7 @@ const Recipes = () => {
         console.log("Perform error message display")
     }   
     const { isLoading,data, error,refetch} = useGetRecipes(onSuccess,onError,diet,calorie,intolerance);
-    const { data: recipeDetailData,refetch: RecipeDetailRefetch} = useGetRecipeDetail(recipeID);
+    const { data: recipeDetailData,refetch: recipeDetailRefetch} = useGetRecipeDetail(recipeID);
 
     const onSaveClick = () => {
         refetch()
