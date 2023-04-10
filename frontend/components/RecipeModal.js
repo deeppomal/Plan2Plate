@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import Image from 'next/image'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useAddFav } from '../hooks/useAddFav';
+import { useRemoveFav } from '../hooks/removeFav';
 
 export const RecipeModal = ({toggleModal,data}) => {
     
@@ -17,8 +19,16 @@ export const RecipeModal = ({toggleModal,data}) => {
     }
     const handleFav = (e) => {
         e.stopPropagation()
+        if(isFav){
+            removeRefetch()
+        }
+        else{
+            addRefetch()
+        }
         setIsFav(!isFav)
     }
+    const { data:addData,refetch:addRefetch} = useAddFav(data);
+    const { data:removeData,refetch:removeRefetch} = useRemoveFav(data.id);
   return (
    
     <div className='z-50 h-screen w-full bg-black/[0.5] fixed flex items-center justify-center' onClick={toggleModal}>

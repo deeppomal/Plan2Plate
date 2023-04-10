@@ -6,7 +6,7 @@ var FavouriteSchema = new Schema({
     recipeId: { type: String },
     image: { type: String },
     title: { type: String },
-    extendedIngredients: { type: String },
+    extendedIngredients: { type: Array },
     instructions: { type: String }
 });
 

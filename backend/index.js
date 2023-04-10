@@ -104,6 +104,16 @@ app.post("/favourite", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
+app.get("/get-fav/:userId", async (req, res) => {
+  try {
+    const favs = await Favourite.find({'userId':req.params.userId})
+    res.status(201).json(favs)
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
+});
+
 app.delete("/del-fav", async (req, res) => {
   try {
     Favourite.deleteOne({recipeId: req.body.recipeId},(function (err) {
