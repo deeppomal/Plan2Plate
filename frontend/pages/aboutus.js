@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/Layout";
 import AboutUs from "../components/AboutUs"
 import { NavbarNew } from "../components/NavbarNew";
 import Accordion from "../components/Accordion";

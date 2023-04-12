@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 var User = require("./models/user");
 var Blog = require("./models/Blog");
+const Favourite = require("./models/Favourite");
 
 const app = express();
 mongoose.connect(process.env.DB_URL);
@@ -70,7 +71,7 @@ app.post("/register", async (req, res) => {
     });
 
     user.save(function (err) {
-      if (err) throw err;
+      if (err) console.log(err);
       res.status(201).json({
         id: user.id,
         firstname: user.firstname,
@@ -82,6 +83,49 @@ app.post("/register", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
+app.post("/favourite", async (req, res) => {
+  try {
+    var favourite = new Favourite({
+      userId: req.body.userId,
+      recipeId: req.body.recipeId,
+      image: req.body.image,
+      title: req.body.title,
+      extendedIngredients: req.body.extendedIngredients,
+      instructions: req.body.instructions,
+    });
+
+    favourite.save(function (err) {
+      res.status(201).json({
+        "message":"Added in favourites successfully"
+      });
+    });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+app.get("/get-fav/:userId", async (req, res) => {
+  try {
+    const favs = await Favourite.find({'userId':req.params.userId})
+    res.status(201).json(favs)
+  } catch (err) {
+    res.status(500).json({ message: err.message })
+  }
+});
+
+app.delete("/del-fav", async (req, res) => {
+  try {
+    Favourite.deleteOne({recipeId: req.body.recipeId},(function (err) {
+      res.status(201).json({
+        "message":"Removed from favourites"
+      });
+    }));
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 
 app.get("/blogs", async (req, res) => {
   try {
