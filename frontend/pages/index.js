@@ -11,10 +11,8 @@ import home from './home'
 export default function Home() {
   return (
     <div className="h-screen">
-      {/* <Home /> */}
-      <NavbarNew />
-        <Featured />
-        <FavourableDietList />
+      <Login />
+      
     </div> 
   );
 }
