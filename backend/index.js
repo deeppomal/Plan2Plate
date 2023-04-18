@@ -8,7 +8,7 @@ var Blog = require("./models/Blog");
 const Favourite = require("./models/Favourite");
 
 const app = express();
-mongoose.connect(process.env.DB_URL);
+mongoose.connect('mongodb+srv://Plan2Plate:Plan2PlateAdmin@plan2plate.bzuktav.mongodb.net/Plan2Plate?retryWrites=true&w=majority');
 
 const db = mongoose.connection;
 db.on("error", (error) => {
