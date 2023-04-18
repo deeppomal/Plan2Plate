@@ -21,7 +21,7 @@ function Categories({ post }) {
       {result.map((category, index) => (
         // <Link key={index} href={`/category/${category.slug}`}>
           <span
-            className="cursor-pointer block  pb-3 mb-3"         >
+            className="cursor-pointer block  pb-3 mb-3"  key={index}       >
             {category}
           </span>
         // </Link>
