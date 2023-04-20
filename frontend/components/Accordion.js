@@ -42,7 +42,7 @@ const Accordion = () => {
   return (
     <div className="flex relative flex-col justify-center items-center md:mt-10 md:mx-30 p-10 rounded-xl h-auto py-5 mb-20">
       <p className="text-center font-bold text-3xl">FAQ</p>
-      {data.map((item) => {
+      {/* {data.map((item) => {
         return (
           <>
             <AccordionUI
@@ -54,7 +54,7 @@ const Accordion = () => {
             ></AccordionUI>
           </>
         );
-      })}
+      })} */}
     </div>
   );
 };
