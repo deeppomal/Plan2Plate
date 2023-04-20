@@ -70,7 +70,7 @@ export const RecipeModal = ({toggleModal,data}) => {
                         data?.instructions.split('.').map((step,index) => {
                             if(step.length > 3){
                                 return(
-                                    <div className='my-2'>
+                                    <div className='my-2' key={index}>
                                         <p className='text-gray-900'>{(index+1) + '. '+ stripHtml(step)}</p>
                                     </div>
                                 )
