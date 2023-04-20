@@ -107,8 +107,9 @@ app.post("/favourite", async (req, res) => {
 
 app.get("/get-fav/:userId", async (req, res) => {
   try {
-    const favs = await Favourite.find({'userId':req.params.userId})
-    res.status(201).json(favs)
+    const favs = await Favourite.find({ 'userId': req.params.userId })
+    console.log(favs);
+    res.status(200).json(favs)
   } catch (err) {
     res.status(500).json({ message: err.message })
   }

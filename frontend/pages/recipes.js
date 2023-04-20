@@ -41,7 +41,7 @@ const Recipes = () => {
             <RecipeFilters setDiet={(diet)=>setDiet(diet)} setCalorie={(calorie)=>setCalorie(calorie)} setIntolerance={(intolerance)=>setIntolerance(intolerance)}
             onSaveClick={onSaveClick}/>
             <RecipesContainer recipeList={data?.data?.results} toggleModal={toggleModal} handleRecipeID={handleRecipeID} />
-            {isModalOpen && recipeDetailData &&<RecipeModal toggleModal={toggleModal} data={recipeDetailData?.data} />}
+            {isModalOpen && recipeDetailData && <RecipeModal toggleModal={toggleModal} data={recipeDetailData?.data} />}
         </div>
     </div>
   )

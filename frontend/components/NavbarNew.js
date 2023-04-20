@@ -27,6 +27,11 @@ export const NavbarNew = () => {
                     Blogs
                 </p>
             </Link>
+            <Link href="/favoriterecipes">
+                <p className='font-semibold mx-4 cursor-pointer text-rose-900 sm-text-xs '>
+                Favorite Recipes
+                </p>
+            </Link>
             <Link href="/home">
                 <p className='font-semibold mx-4 cursor-pointer text-rose-900 sm-text-xs'>
                     Company
