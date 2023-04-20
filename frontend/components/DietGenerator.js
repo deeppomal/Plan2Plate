@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Tab, Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import MealList from './MealList';
+import MealList from "./MealList";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -54,25 +54,25 @@ const DietGenerator = () => {
     ],
   });
 
-  const [mealData,setMealData] = useState(null);
-  const [calories,setCalories] = useState(2000);
+  const [mealData, setMealData] = useState(null);
+  const [calories, setCalories] = useState(2000);
 
   function handleChange(e) {
     setCalories(e.target.value);
   }
-  
+
   function getMealData() {
     fetch(
       `https://api.spoonacular.com/mealplanner/generate?apiKey=e00652e747d543d79cc4991ee4312387&timeFrame=day&targetCalories=${calories}`
     )
-    .then((response) => response.json())
-    .then((data) => {
-      setMealData(data);
-      console.log(data);
-    })
-    .catch(() => {
-      console.log("error");
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        setMealData(data);
+        console.log(data);
+      })
+      .catch(() => {
+        console.log("error");
+      });
   }
 
   return (
@@ -180,7 +180,6 @@ const DietGenerator = () => {
                         aria-hidden="true"
                       />
                     </Menu.Button>
-                    {mealData && <MealList mealData={mealData} />}
                   </div>
                 </Menu>
               </Tab.Panel>
@@ -188,6 +187,7 @@ const DietGenerator = () => {
           </Tab.Panels>
         </Tab.Group>
       </div>
+      {mealData && <MealList mealData={mealData} />}
     </div>
   );
 };
