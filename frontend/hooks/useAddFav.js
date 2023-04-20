@@ -4,7 +4,7 @@ import axios from 'axios'
 const postFav = (data)=>{
     const options = {
         method: 'POST',
-        url: 'http://localhost:3000/favourite',
+        url: 'https://plan2plateapi.onrender.com/favourite',
         data: {
             userId: '111',
             recipeId: data.id,

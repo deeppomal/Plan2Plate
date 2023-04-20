@@ -4,7 +4,7 @@ import axios from 'axios'
 const delFav = (recipeId)=>{
     const options = {
         method: 'DELETE',
-        url: 'http://localhost:3000/del-fav',
+        url: 'https://plan2plateapi.onrender.com//del-fav',
         data: {
             recipeId: recipeId,
         },

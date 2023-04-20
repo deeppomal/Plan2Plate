@@ -18,11 +18,11 @@ export const Login = () => {
     const [isRegistered,setIsRegistered] = useState(false)
 
     const registerBtnHandler = async () => {
-        const response = await APICall("http://localhost:3000/register",{firstname,lastname,email,password,confirmpassword})
+        const response = await APICall("https://plan2plateapi.onrender.com/register",{firstname,lastname,email,password,confirmpassword})
        if (response != null ) setIsRegistered(true)
     }
     const loginBtnHandler = async () => {
-        const response = await APICall("http://localhost:3000/login",{email,password})
+        const response = await APICall("https://plan2plateapi.onrender.com/login",{email,password})
        if (response != null ) console.log('hi',response.firstname)
     }
 

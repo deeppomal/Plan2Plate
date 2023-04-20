@@ -11,7 +11,8 @@ function Blog() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await axios.get(process.env.API_ENDPOINT + "/blogs");
+        const result = await axios.get('https://plan2plateapi.onrender.com' + "/blogs");
+
          console.log("unsorted data");
          
         setBlogs(result.data.data);
